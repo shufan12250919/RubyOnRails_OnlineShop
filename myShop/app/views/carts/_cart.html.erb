@@ -2,7 +2,7 @@
 
 <h3> Items in your shopping cart</h3>
 
-<table>
+<table style="border:3px #FFAC55 solid;padding:5px;" rules="all" cellpadding='5'>
   <% @cart.lineitems.each do |item| %>
     <tr>
       <td> <%= item.quantity %> </td>
