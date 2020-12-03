@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :lineitems
   resources :carts
   root 'shopper#index', as: "shopper" # will have shopper_path
