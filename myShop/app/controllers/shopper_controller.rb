@@ -6,4 +6,11 @@ class ShopperController < ApplicationController
   def index
     @products = Product.order(:name)
   end
+
+  # GET /shopper/1
+  # GET /shopper/1.json
+  def show
+    @product = Product.find params[:id]
+  end
+
 end

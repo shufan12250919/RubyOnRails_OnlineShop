@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p class= "big">
+<%= image_tag(@product.image) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @product.image %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+
+<%= button_to 'Add to Cart', lineitems_path(product_id: @product), class: 'add_to_cart'%>
+<br>
+<%= link_to 'Back', shopper_path %>

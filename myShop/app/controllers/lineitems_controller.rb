@@ -78,4 +78,7 @@ class LineitemsController < ApplicationController
     def lineitem_params
       params.require(:lineitem).permit(:cart_id, :product_id)
     end
+
+    
+
 end

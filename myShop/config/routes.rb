@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'shopper#index', as: "shopper" # will have shopper_path
   get 'shopper/index'
   get '/shopper', to: 'shopper#index'
+  get 'shopper/show'
   resources :products
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

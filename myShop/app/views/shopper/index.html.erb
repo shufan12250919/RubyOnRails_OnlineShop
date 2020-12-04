@@ -11,6 +11,7 @@
     <p><%= sanitize(product.description) %></p>
     <div class="price_line">
       <span class="price"><%= product.price %></span>
+      <%= link_to 'Show', shopper_show_path(id: product.id) %>
     </div>
     <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart', remote: true %>
 </div>
