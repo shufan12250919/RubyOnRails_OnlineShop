@@ -17,8 +17,24 @@
     <div id="columns">
       <div id="side">
         <div id="cart">
+          <% if controller.controller_name == "shopper" %>
           <%= render @cart %>
+          <% end %>
         </div>
+        <ul>
+          <li><a href="/shopper">Home</a></li>
+          <li><a href="https://www.google.com/">Questions</a></li>
+          <li><a href="https://www.scu.edu/news-and-events/">News</a></li>
+          <li><a href="https://www.scu.edu/admitted/contact-us/">Contact</a></li>
+        </ul>
+        <% if session[:user_id] %>
+          <ul>
+            <li><%= link_to 'Orders',   orders_path   %></li>
+            <li><%= link_to 'Products', products_path %></li>
+            <li><%= link_to 'Users',    users_path    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path %>
+        <% end %>
       </div>
       <div id="main">
         <%= yield %>

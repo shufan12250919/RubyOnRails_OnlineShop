@@ -1,5 +1,26 @@
 <h1>New Order</h1>
+<h3> Order details<h3>
+<table style="border:3px #FFAC55 solid;padding:5px;" rules="all" cellpadding='5'>
+  <tr>
+    <td> Quantity </td>
+    <td> Name </td>
+    <td > Price </td>
+  </tr>
+  <% @cart.lineitems.each do |item| %>
+    <tr>
+      <td> <%= item.quantity %> </td>
+      <td> <%= item.product.name %> </td>
+      <td class="item_price"> <%= item.product.price %> </td>
+    </tr>
+  <% end %>
+  <tr class = "total_price">
+    <td colspan = 2> Total </td>
+    <td> <%= @cart.total_price %> </td>
+  </tr>
+</table>
+<br>
+<h3> Buyer information</h3>
 
 <%= render 'form', order: @order %>
 
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', shopper_path %>
