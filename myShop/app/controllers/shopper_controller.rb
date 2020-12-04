@@ -13,4 +13,11 @@ class ShopperController < ApplicationController
     @product = Product.find params[:id]
   end
 
+  def search
+      if params[:search]
+        @parameter = params[:search]
+        @products = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+      end
+  end
+  
 end

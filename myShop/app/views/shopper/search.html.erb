@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+
+  <tbody>
+    <% if @products != nil %>
+    <% @products.each do |product| %>
+    <div class="entry">
+      <%= image_tag(product.image) %>
+      <h3><%= product.name %></h3>
+        <p><%= sanitize(product.description) %></p>
+        <div class="price_line">
+          <span class="price"><%= product.price %></span>
+          <%= link_to 'Show', shopper_show_path(id: product.id) %>
+        </div>
+        <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart', remote: true %>
+    </div>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', shopper_path %>

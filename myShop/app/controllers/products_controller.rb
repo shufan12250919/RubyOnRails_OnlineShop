@@ -1,10 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+  end
+
+  def search
+      if params[:search]
+        @parameter = params[:search]
+        @products = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+      end
   end
 
   # GET /products/1

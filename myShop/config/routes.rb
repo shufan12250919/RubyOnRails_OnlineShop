@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   get '/shopper', to: 'shopper#index'
   get 'shopper/show'
   resources :products
+  post 'products/search'
+  post 'shopper/search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

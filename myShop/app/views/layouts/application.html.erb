@@ -16,6 +16,18 @@
     </div>
     <div id="columns">
       <div id="side">
+        <% if controller.controller_name == 'products' %>
+        <%= form_tag products_search_path do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter Text..." %>
+            <%= submit_tag "Search", name: nil %>
+        <% end %>
+        <% end %>
+        <% if controller.controller_name == 'shopper' %>
+        <%= form_tag shopper_search_path do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter Text..." %>
+            <%= submit_tag "Search", name: nil %>
+        <% end %>
+        <% end %>
         <div id="cart">
           <% if controller.controller_name == "shopper" %>
           <%= render @cart %>
