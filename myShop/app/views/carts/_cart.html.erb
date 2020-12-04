@@ -3,6 +3,13 @@
 <h3> Items in your shopping cart</h3>
 
 <table style="border:3px #FFAC55 solid;padding:5px;" rules="all" cellpadding='5'>
+  <% if !@cart.lineitems.empty? %>
+  <tr>
+    <td> Quantity </td>
+    <td> Name </td>
+    <td > Price </td>
+  </tr>
+  <% end %>
   <% @cart.lineitems.each do |item| %>
     <tr>
       <td> <%= item.quantity %> </td>
